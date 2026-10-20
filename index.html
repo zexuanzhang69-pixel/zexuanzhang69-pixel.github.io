@@ -1,0 +1,450 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Zexuan Zhang · Urban Planning Portfolio</title>
+<meta name="description" content="Zexuan Zhang, master's student in Sustainable Urban Planning and Design at KTH. Portfolio of research, planning practice and community projects.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f4f3ef;
+  --ink:#111;
+  --mute:#777;
+  --line:#d9d7d0;
+  --serif:'Instrument Serif','Times New Roman',Times,serif;
+  --sans:'DM Sans',Helvetica,Arial,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.65;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+.caps{text-transform:uppercase;letter-spacing:.12em;font-size:11.5px;font-weight:500}
+.mute{color:var(--mute)}
+.wrap{max-width:1180px;margin:0 auto;padding:0 32px}
+
+/* nav */
+header.bar{position:sticky;top:0;z-index:40;background:var(--bg);border-bottom:1px solid var(--line)}
+.bar .wrap{display:flex;align-items:center;justify-content:space-between;gap:24px;height:76px}
+.brand{font-weight:600;letter-spacing:.1em;font-size:13px}
+.links{display:flex;gap:34px;align-items:center}
+.links a.l{color:var(--mute);transition:color .2s}
+.links a.l:hover{color:var(--ink)}
+.mailbtn{width:44px;height:44px;background:var(--ink);color:#fff;display:grid;place-items:center;transition:opacity .2s}
+.mailbtn:hover{opacity:.8}
+.mailbtn svg{width:20px;height:20px;display:block}
+
+/* hero */
+.hero{padding:70px 0 90px}
+.hero .wrap{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;min-height:calc(100vh - 160px)}
+.hero h1{font-family:var(--serif);font-weight:400;font-size:clamp(72px,11vw,168px);line-height:.95;letter-spacing:-.02em}
+.hero .sub{margin-top:60px;display:flex;flex-direction:column;gap:6px}
+.pattern{justify-self:end;width:100%;max-width:520px;aspect-ratio:4/5.2;border-radius:0 38% 46% 0/0 22% 30% 0;overflow:hidden;background:var(--bg)}
+.pattern canvas{width:100%;height:100%;display:block;image-rendering:pixelated}
+
+/* sections */
+section.s{border-top:1px solid var(--line);padding:90px 0}
+.s .wrap{display:grid;grid-template-columns:240px 1fr;gap:48px}
+.s .label{position:sticky;top:110px;align-self:start}
+.s h2{font-family:var(--serif);font-weight:400;font-size:clamp(34px,4.4vw,56px);line-height:1.1;margin-bottom:34px;max-width:20ch}
+.lead{font-family:var(--serif);font-size:clamp(26px,3vw,38px);line-height:1.22;margin-bottom:24px;max-width:30em}
+.about .photo{margin-bottom:44px}
+.about .photo img{width:100%;height:auto;display:block;border-radius:0 0 72px 0}
+.about p{margin-bottom:16px;max-width:62ch}
+.about p.lead{margin-bottom:24px}
+.facts{display:grid;grid-template-columns:140px 1fr;gap:12px 24px;margin-top:40px;border-top:1px solid var(--line);padding-top:24px}
+
+.list{border-top:1px solid var(--ink)}
+.item{display:grid;grid-template-columns:190px 1fr;gap:24px;padding:20px 0;border-bottom:1px solid var(--line)}
+.item h3{font-size:15px;font-weight:500}
+.item h3 span{font-weight:400;color:var(--mute)}
+.item ul{margin:10px 0 0 18px;color:#444}
+.item li{margin-bottom:4px}
+.sub-h{margin:46px 0 14px;display:flex;align-items:center;gap:12px}
+.sub-h:first-of-type{margin-top:0}
+.sub-h::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--ink)}
+
+.edu-row{display:grid;grid-template-columns:96px 1fr;gap:26px;align-items:center;padding:24px 0;border-bottom:1px solid var(--line)}
+.crest{height:80px;width:auto;max-width:96px;justify-self:center;display:block}
+.edu-head{display:flex;justify-content:space-between;align-items:baseline;gap:6px 20px;flex-wrap:wrap}
+.edu-head h3{font-size:17px;font-weight:500}
+.edu-date{color:var(--mute);white-space:nowrap}
+.edu-loc{display:block;font-style:italic;color:var(--mute);margin-top:2px}
+.edu-deg{margin-top:4px}
+
+/* projects */
+.proj{border-top:1px solid var(--ink)}
+.p{display:grid;grid-template-columns:56px 1fr 120px;gap:24px;padding:30px 0;border-bottom:1px solid var(--line);transition:padding .3s}
+.p:hover{padding-left:14px}
+.p .n{color:var(--mute);font-size:12px;padding-top:8px}
+.p h3{font-family:var(--serif);font-weight:400;font-size:clamp(28px,3.2vw,42px);line-height:1.1;margin:6px 0 14px;max-width:24em}
+.p p{max-width:62ch;color:#333}
+.p .tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.tag{border:1px solid var(--ink);padding:2px 10px;font-size:11.5px;border-radius:99px}
+.p .d{text-align:right;padding-top:8px}
+.split{display:grid;grid-template-columns:1fr 250px;gap:40px;align-items:start}
+.map img{width:100%;height:auto;display:block;border:1px solid var(--line);background:#fff;filter:grayscale(1);transition:filter .5s}
+.p:hover .map img{filter:none}
+@media(hover:none){.map img{filter:none}}
+.proj-img{margin:4px 0 22px;max-width:760px}
+.proj-img img{width:100%;height:auto;display:block;filter:grayscale(1);transition:filter .5s}
+.p:hover .proj-img img{filter:none}
+@media(hover:none){.proj-img img{filter:none}}
+.ext{display:inline-block;margin-top:16px;max-width:60ch;border-bottom:1px solid var(--ink);padding-bottom:2px;transition:opacity .2s}
+.ext:hover{opacity:.6}
+.ext-k{text-transform:uppercase;letter-spacing:.12em;font-size:11.5px;font-weight:500;color:var(--mute);margin-right:6px}
+
+.xl{border-bottom:1px solid currentColor;padding-bottom:1px;transition:color .2s}
+.xl:hover{color:var(--ink)}
+.skills{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--ink)}
+.skills div{padding:24px 24px 24px 0;border-bottom:1px solid var(--line)}
+.skills h3{margin-bottom:8px}
+
+.mail{font-family:var(--serif);font-size:clamp(34px,6vw,80px);line-height:1.1;border-bottom:2px solid var(--ink);display:inline-block;word-break:break-all}
+.mail:hover{opacity:.6}
+.links2{margin-top:28px;display:flex;flex-direction:column;align-items:flex-start;gap:14px}
+.links2 a{border-bottom:1px solid var(--ink);padding-bottom:2px}
+.links2 a:hover{opacity:.6}
+
+footer{border-top:1px solid var(--line);padding:26px 0 40px}
+footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+
+.js .rv{opacity:0;transform:translateY(18px);transition:opacity .7s,transform .7s}
+.js .rv.in{opacity:1;transform:none}
+
+/* interests */
+.fun{display:grid;grid-template-columns:repeat(2,1fr);gap:0;border-top:1px solid var(--ink);border-left:1px solid var(--line)}
+.fun-card{position:relative;min-height:290px;padding:22px 24px 24px;display:flex;flex-direction:column;border-right:1px solid var(--line);border-bottom:1px solid var(--line);transition:background .35s,color .35s;overflow:hidden}
+.fun-card:hover{background:var(--ink);color:var(--bg)}
+.fun-top{display:flex;justify-content:space-between;opacity:.7}
+.fun-art{flex:1;display:flex;align-items:center;justify-content:center;padding:18px 0}
+.fun-card h3{font-family:var(--serif);font-weight:400;font-size:clamp(32px,3.6vw,46px);line-height:1;margin-bottom:6px}
+.fun-card p{opacity:.75;font-size:14px}
+.fun-card svg{display:block}
+/* travel */
+.route-line{stroke:currentColor;stroke-width:1.6;fill:none;stroke-dasharray:3 7;stroke-linecap:round;animation:dash 1.6s linear infinite}
+@keyframes dash{to{stroke-dashoffset:-20}}
+.route-dot{fill:currentColor}
+/* music */
+.eq{display:flex;align-items:flex-end;gap:7px;height:96px}
+.eq i{display:block;width:10px;height:100%;background:currentColor;transform-origin:bottom;transform:scaleY(.3);animation:eq 1.3s ease-in-out infinite alternate}
+.eq i:nth-child(1){animation-duration:1.1s}.eq i:nth-child(2){animation-duration:.8s;animation-delay:-.3s}.eq i:nth-child(3){animation-duration:1.4s;animation-delay:-.6s}
+.eq i:nth-child(4){animation-duration:.9s;animation-delay:-.2s}.eq i:nth-child(5){animation-duration:1.2s;animation-delay:-.9s}.eq i:nth-child(6){animation-duration:.7s;animation-delay:-.5s}.eq i:nth-child(7){animation-duration:1s;animation-delay:-.1s}
+@keyframes eq{to{transform:scaleY(1)}}
+.fun-card:hover .eq i{animation-duration:.45s}
+.fun-card:hover .eq i:nth-child(odd){background:#ff3ea5}
+.genre{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap}
+.genre span{border:1px solid currentColor;border-radius:99px;padding:1px 10px;font-size:12px;opacity:.85}
+
+.fun{grid-template-columns:repeat(3,1fr)}
+.fun-wide{grid-column:1/-1;min-height:0}
+.wide-body{display:grid;grid-template-columns:300px 1fr;gap:32px;align-items:center;flex:1;padding:14px 0 0}
+.wide-body .fun-art{padding:0}
+.count{font-family:var(--serif);font-size:clamp(26px,3vw,38px);line-height:1;margin:6px 0 14px}
+.count small{font-family:inherit;font-size:.55em;opacity:.7}
+.places{list-style:none;display:flex;flex-wrap:wrap;gap:7px}
+.places li{border:1px solid currentColor;border-radius:99px;padding:1px 11px;font-size:12.5px;opacity:.85}
+.steps{width:100%;max-width:260px}
+@media(max-width:900px){.fun{grid-template-columns:1fr}.wide-body{grid-template-columns:1fr;gap:10px}}
+/* reading */
+.shelf{display:flex;align-items:flex-end;gap:5px;height:110px}
+.shelf i{display:block;border:1.6px solid currentColor;border-radius:2px;transform-origin:bottom left;transition:transform .45s cubic-bezier(.3,1.6,.5,1)}
+.shelf i:nth-child(1){width:18px;height:92px}.shelf i:nth-child(2){width:26px;height:108px}.shelf i:nth-child(3){width:15px;height:84px}
+.shelf i:nth-child(4){width:22px;height:100px}.shelf i:nth-child(5){width:17px;height:88px}.shelf i:nth-child(6){width:24px;height:104px;margin-left:10px;transform:rotate(-12deg)}
+.fun-card:hover .shelf i:nth-child(2){transform:translateY(-16px)}
+.fun-card:hover .shelf i:nth-child(4){transform:translateY(-10px)}
+.fun-card:hover .shelf i:nth-child(6){transform:rotate(0)}
+/* walking */
+.steps{position:relative;width:260px;height:96px}
+.steps i{position:absolute;width:12px;height:22px;border-radius:50% 50% 45% 45%;background:currentColor;opacity:0;animation:step 4.8s infinite}
+@keyframes step{0%{opacity:0;transform:scale(.6)}8%{opacity:1;transform:scale(1)}60%{opacity:.8}100%{opacity:0}}
+@media(max-width:900px){.fun{grid-template-columns:1fr}.fun-card{min-height:250px}}
+@media(prefers-reduced-motion:reduce){.route-line,.eq i,.steps i{animation:none}.eq i{transform:scaleY(.6)}.steps i{opacity:.6}}
+
+@media(max-width:900px){
+  .hero .wrap{grid-template-columns:1fr;gap:40px;min-height:0}
+  .pattern{justify-self:start;max-width:100%;aspect-ratio:1/1}
+  .s .wrap{grid-template-columns:1fr;gap:18px}
+  .s .label{position:static}
+  .links a.l{display:none}
+  .item{grid-template-columns:1fr;gap:4px}
+  .edu-row{grid-template-columns:64px 1fr;gap:16px}
+  .crest{height:60px;max-width:64px}
+  .p{grid-template-columns:36px 1fr}
+  .p .d{grid-column:2;text-align:left;padding:0}
+  .skills{grid-template-columns:1fr}
+  .split{grid-template-columns:1fr;gap:20px}
+  .map{max-width:280px}
+  .about .photo img{border-radius:0 0 40px 0}
+  .wrap{padding:0 20px}
+  .hero{padding-top:40px}
+  .hero .sub{margin-top:36px}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.js .rv{transition:none}}
+</style>
+</head>
+<body>
+
+<header class="bar">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Zexuan Zhang, back to top">ZZ</a>
+    <nav class="links caps">
+      <a class="l" href="#about">About</a>
+      <a class="l" href="#education">Education</a>
+      <a class="l" href="#work">Work</a>
+      <a class="l" href="#experience">Experience</a>
+      <a class="mailbtn" href="#contact" aria-label="Get in touch" title="Get in touch">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="1.5"/><path d="m3.5 6.5 8.5 6.5 8.5-6.5"/></svg>
+      </a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <div class="wrap">
+    <div>
+      <h1>Zexuan<br>Zhang</h1>
+      <div class="sub caps">
+        <span>Urban planning &amp; design</span>
+        <span class="mute">Master's student · KTH Stockholm</span>
+        <span class="mute">Exchange · KU Leuven</span>
+      </div>
+    </div>
+    <div class="pattern" aria-hidden="true"><canvas id="rd" width="260" height="338"></canvas></div>
+  </div>
+</section>
+
+<section class="s rv" id="about">
+  <div class="wrap">
+    <div class="label caps">01 / About</div>
+    <div class="about">
+      <figure class="photo"><img src="photo.jpg" alt="Portrait of Zexuan Zhang overlooking a rail yard in Stockholm" loading="lazy"></figure>
+      <p class="lead">I study how policy and street design shape everyday public life, and how planning can make cities more sustainable.</p>
+      <p>I am a master's student in Sustainable Urban Planning and Design at KTH Royal Institute of Technology in Stockholm, currently on exchange at KU Leuven. I hold a dual BEng and BA in Urban Planning and Design from Xi'an Jiaotong-Liverpool University and the University of Liverpool.</p>
+      <p>My experience spans a municipal planning bureau, a rail transit design institute, community renewal work and two years of teaching geography. That mix taught me to move between data, drawings and people.</p>
+      <div class="facts">
+        <span class="caps mute">Now</span><span>MSc, KTH · Exchange at KU Leuven</span>
+        <span class="caps mute">Interests</span><span>Sustainable urbanism, public space, nighttime economy, community renewal, transit</span>
+        <span class="caps mute">Languages</span><span>English (IELTS 7.0), Mandarin (native), Swedish (SFI 3C)</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="s rv" id="education">
+  <div class="wrap">
+    <div class="label caps">02 / Education</div>
+    <div>
+      <h2>Where I learn.</h2>
+      <div class="list edu">
+        <article class="edu-row"><img class="crest" src="logos/kth.svg" alt="KTH emblem" loading="lazy"><div class="edu-txt"><div class="edu-head"><h3>KTH Royal Institute of Technology</h3><span class="edu-date">Aug 2025 – Jun 2027</span></div><em class="edu-loc">Stockholm, Sweden</em><p class="edu-deg">Master in Sustainable Urban Planning and Design</p></div></article>
+        <article class="edu-row"><img class="crest" src="logos/kuleuven-seal.svg" alt="KU Leuven emblem" loading="lazy"><div class="edu-txt"><div class="edu-head"><h3>KU Leuven</h3><span class="edu-date">Aug 2026 – Jan 2027</span></div><em class="edu-loc">Leuven, Belgium</em><p class="edu-deg">Exchange study, Master of Urbanism, Landscape and Planning</p></div></article>
+        <article class="edu-row"><img class="crest" src="logos/xjtlu-shield.svg" alt="Xi'an Jiaotong-Liverpool University emblem" loading="lazy"><div class="edu-txt"><div class="edu-head"><h3>Xi'an Jiaotong-Liverpool University</h3><span class="edu-date">2019 – 2023</span></div><em class="edu-loc">Suzhou, China</em><p class="edu-deg">BEng in Urban Planning and Design (dual degree)</p></div></article>
+        <article class="edu-row"><img class="crest" src="logos/liverpool-shield.svg" alt="University of Liverpool emblem" loading="lazy"><div class="edu-txt"><div class="edu-head"><h3>University of Liverpool</h3><span class="edu-date">2019 – 2023</span></div><em class="edu-loc">Liverpool, UK</em><p class="edu-deg">BA in Urban Planning and Design (dual degree)</p></div></article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="s rv" id="work">
+  <div class="wrap">
+    <div class="label caps">03 / Selected work</div>
+    <div>
+      <h2>Projects &amp; research.</h2>
+      <div class="proj">
+        <article class="p">
+          <div class="n caps">01</div>
+          <div>
+            <div class="caps mute">Research · Undergraduate dissertation</div>
+            <h3>Government interventions in fostering nighttime conviviality: the Gusu 8:30 initiative in Suzhou</h3>
+            <figure class="proj-img"><img src="gusu.jpg" alt="Shantang Street canal in Suzhou at dusk, lined with lanterns and crowds" loading="lazy"></figure>
+            <p>Studied how a municipal nighttime economy initiative affected urban conviviality, combining case study, policy review, social media data from Zhihu and fieldwork on Guanqian Street. I interviewed 23 tourists, residents and shopkeepers: over half viewed the project favourably, while homogeneity and street tidiness were concerns. The findings suggest that policy support (preferential regulations, events) and street design (lighting, furniture, layout) can strengthen nighttime conviviality.</p>
+            <div class="tags"><span class="tag">Case study</span><span class="tag">Policy review</span><span class="tag">Fieldwork</span><span class="tag">23 interviews</span></div>
+          </div>
+          <div class="d caps mute">Mar 2023</div>
+        </article>
+        <article class="p">
+          <div class="n caps">02</div>
+          <div class="split">
+            <div>
+              <div class="caps mute">Practice · Transit</div>
+              <h3>Suzhou Metro Line 7</h3>
+              <p>Intern at China Railway 4th Survey &amp; Design Institute. I took part in site selection and route planning, and practised location analysis, integration with residential and commercial zones, and cost assessment.</p>
+              <div class="tags"><span class="tag">Route planning</span><span class="tag">Site analysis</span></div>
+            </div>
+            <figure class="map"><img src="metro7.png" alt="Route map of Suzhou Metro Line 7, from Changlou to Muli" loading="lazy"></figure>
+          </div>
+          <div class="d caps mute">Jun – Jul 2021</div>
+        </article>
+        <article class="p">
+          <div class="n caps">03</div>
+          <div>
+            <div class="caps mute">Practice · Public facility</div>
+            <h3>Gaomiao Village Clinic</h3>
+            <p>Assistant at the Wuhan Municipal Bureau of Urban and Rural Planning. I took part in site selection and implementation planning, and produced visual content for promotional materials and web publications.</p>
+            <div class="tags"><span class="tag">Site selection</span><span class="tag">Adobe CS</span></div>
+          </div>
+          <div class="d caps mute">Jun – Jul 2022</div>
+        </article>
+        <article class="p">
+          <div class="n caps">04</div>
+          <div>
+            <div class="caps mute">Community · Renewal</div>
+            <h3>Suzhou Luxiang Community Renewal Project</h3>
+            <p>Project member in a community renewal project in Suzhou.</p>
+            <a class="ext" href="https://www.xjtlu.edu.cn/en/news/2025/09/yesterday-today-and-tomorrow-of-suzhou-community-garden" target="_blank" rel="noopener noreferrer"><span class="ext-k">Related</span> XJTLU News: Symposium explores yesterday, today, and tomorrow of Suzhou Community Garden <span aria-hidden="true">↗</span></a>
+            <div class="tags"><span class="tag">Community renewal</span></div>
+          </div>
+          <div class="d caps mute">2021</div>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="s rv" id="experience">
+  <div class="wrap">
+    <div class="label caps">04 / Experience</div>
+    <div>
+      <h2>Work &amp; more.</h2>
+
+      <div class="sub-h caps">Work</div>
+      <div class="list">
+        <div class="item"><div class="caps mute">Nov 2024 – Jul 2025</div><div><h3>Bilingual Geography Teacher (CAIE A-level) <span>· Suzhou Foreign Language School</span></h3></div></div>
+        <div class="item"><div class="caps mute">Aug 2023 – Jul 2024</div><div><h3>Bilingual Geography Teacher (IGCSE) <span>· Wuhan Ulink College of China Optics Valley</span></h3></div></div>
+      </div>
+
+      <div class="sub-h caps">Internships</div>
+      <div class="list">
+        <div class="item"><div class="caps mute">Jun – Jul 2022</div><div><h3>Urban Planner Assistant <span>· Wuhan Municipal Bureau of Urban and Rural Planning</span></h3><ul><li>Edited visual content in Adobe Creative Suite for promotional materials and website publications.</li><li>Took part in site selection and implementation planning for Gaomiao Village Clinic.</li></ul></div></div>
+        <div class="item"><div class="caps mute">Jun – Jul 2021</div><div><h3>Intern Assistant, Rail Transit Design Dept <span>· China Railway 4th Survey &amp; Design Institute</span></h3><ul><li>Took part in site selection and route planning for Suzhou Metro Line 7.</li><li>Gained hands-on experience in location analysis, design development, integration with residential and commercial zones, and cost assessment.</li><li>Assisted senior staff with document preparation, data analysis and design coordination.</li></ul></div></div>
+      </div>
+
+      <div class="sub-h caps">Volunteering &amp; campus life</div>
+      <div class="list">
+        <div class="item"><div class="caps mute">2026</div><div><h3>Official Volunteer <span>· <a class="xl" href="https://worldwaterweek.org/2026" target="_blank" rel="noopener noreferrer">World Water Week ↗</a></span></h3></div></div>
+        <div class="item"><div class="caps mute">2026</div><div><h3>Buddy, International Reception Team <span>· KTH Royal Institute of Technology</span></h3></div></div>
+        <div class="item"><div class="caps mute">2026</div><div><h3>Participant <span>· <a class="xl" href="https://www.plantbasedcampus.org/" target="_blank" rel="noopener noreferrer">Plant-Based Campus ↗</a></span></h3></div></div>
+        <div class="item"><div class="caps mute">2020 – 2021</div><div><h3>Director of the Publicity Department <span>· <a class="xl" href="https://club.xjtlu.edu.cn/en/club/56" target="_blank" rel="noopener noreferrer">XJTLU Tea Art Association ↗</a></span></h3></div></div>
+      </div>
+
+      <div class="sub-h caps">Certifications</div>
+      <div class="list">
+        <div class="item"><div class="caps mute">2023</div><div><h3>TES Certifications <span>· Health &amp; Safety for International Schools, Child Protection</span></h3></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="s rv" id="skills">
+  <div class="wrap">
+    <div class="label caps">05 / Skills</div>
+    <div>
+      <h2>Toolbox.</h2>
+      <div class="skills">
+        <div><h3 class="caps mute">Analysis</h3>ArcGIS, QGIS, LCA (Life Cycle Assessment), SPSS</div>
+        <div><h3 class="caps mute">Design / Office</h3>Adobe Photoshop and Illustrator, AutoCAD, SketchUp, Microsoft Office, iWork</div>
+        <div><h3 class="caps mute">Languages</h3>English (IELTS 7.0), Mandarin Chinese (native), Swedish (SFI 3C)</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="s rv" id="interests">
+  <div class="wrap">
+    <div class="label caps">06 / Interests</div>
+    <div>
+      <h2>Off the clock.</h2>
+      <div class="fun">
+        <article class="fun-card fun-wide"><div class="fun-top caps"><span>01</span><span>Travel</span></div><div class="wide-body"><div class="fun-art"><svg width="260" height="96" viewBox="0 0 260 96" aria-hidden="true"><path id="rp" class="route-line" d="M18 74 C 70 8, 130 8, 150 52 S 215 92, 244 22"/><circle class="route-dot" cx="18" cy="74" r="5"/><circle class="route-dot" cx="244" cy="22" r="5"/><circle class="route-dot" r="4"><animateMotion dur="5s" repeatCount="indefinite"><mpath href="#rp"/></animateMotion></circle></svg></div><div class="wide-txt"><h3>Travel</h3><p>Seeing how other places work, one street at a time.</p><div class="count">14 countries <small>+ Åland</small></div><ul class="places"><li>Japan</li><li>USA</li><li>Sweden</li><li>Estonia</li><li>Belgium</li><li>Netherlands</li><li>Denmark</li><li>France</li><li>Norway</li><li>Turkey</li><li>Germany</li><li>Luxembourg</li><li>Switzerland</li><li>Italy</li><li>Åland</li></ul></div></div></article>
+        <article class="fun-card"><div class="fun-top caps"><span>02</span><span>Music</span></div><div class="fun-art"><div class="eq" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div><div><h3>Music</h3><p>On repeat, loudly.</p><div class="genre"><span>Indie pop</span><span>Hyper pop</span></div></article>
+        <article class="fun-card"><div class="fun-top caps"><span>03</span><span>Reading</span></div><div class="fun-art"><div class="shelf" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div></div><div><h3>Reading</h3><p>Books, slowly.</p></div></article>
+        <article class="fun-card"><div class="fun-top caps"><span>04</span><span>Walking</span></div><div class="fun-art"><div class="steps" aria-hidden="true"><i style="left:2.3%;top:62px;transform:rotate(8deg);animation-delay:0s"></i><i style="left:13.8%;top:30px;transform:rotate(8deg);animation-delay:0.55s"></i><i style="left:26.9%;top:60px;transform:rotate(8deg);animation-delay:1.1s"></i><i style="left:39.2%;top:28px;transform:rotate(8deg);animation-delay:1.65s"></i><i style="left:52.3%;top:58px;transform:rotate(8deg);animation-delay:2.2s"></i><i style="left:64.6%;top:26px;transform:rotate(8deg);animation-delay:2.75s"></i><i style="left:77.7%;top:56px;transform:rotate(8deg);animation-delay:3.3s"></i><i style="left:90.0%;top:24px;transform:rotate(8deg);animation-delay:3.85s"></i></div></div><div><h3>Walking</h3><p>Still the best way to read a city.</p></div></article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="s rv" id="contact">
+  <div class="wrap">
+    <div class="label caps">07 / Contact</div>
+    <div>
+      <h2>Say hello.</h2>
+      <a class="mail" href="mailto:zexuan.zhang@outlook.com">zexuan.zhang@outlook.com</a>
+      <div class="links2">
+        <a href="https://www.linkedin.com/in/zexuan-zhang/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+        <a href="CV-ZexuanZhang.pdf" target="_blank" rel="noopener">CV (PDF) ↗</a>
+      </div>
+      <p class="caps mute" style="margin-top:26px">Stockholm, Sweden · Leuven, Belgium</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap caps mute">
+    <span>© 2026 Zexuan Zhang</span>
+    <a href="#top">Back to top ↑</a>
+  </div>
+</footer>
+
+<script>
+document.documentElement.classList.add('js');
+
+/* reaction-diffusion (Gray-Scott) pattern */
+(function(){
+  const cv=document.getElementById('rd'),ctx=cv.getContext('2d');
+  const W=cv.width,H=cv.height,N=W*H;
+  let U=new Float32Array(N).fill(1),V=new Float32Array(N),U2=new Float32Array(N),V2=new Float32Array(N);
+  const Du=1,Dv=.5,F=.037,K=.06;
+  function seed(cx,cy,r){
+    for(let y=-r;y<=r;y++)for(let x=-r;x<=r;x++){
+      const i=((cy+y+H)%H)*W+((cx+x+W)%W);U[i]=.5;V[i]=1;
+    }
+  }
+  for(let i=0;i<40;i++)seed((Math.random()*W)|0,(Math.random()*H)|0,4);
+  function step(){
+    for(let y=0;y<H;y++){
+      const ym=(y?y-1:H-1)*W,y0=y*W,yp=(y<H-1?y+1:0)*W;
+      for(let x=0;x<W;x++){
+        const xm=x?x-1:W-1,xp=x<W-1?x+1:0,i=y0+x;
+        const u=U[i],v=V[i],uvv=u*v*v;
+        const lu=U[ym+x]+U[yp+x]+U[y0+xm]+U[y0+xp]-4*u;
+        const lv=V[ym+x]+V[yp+x]+V[y0+xm]+V[y0+xp]-4*v;
+        U2[i]=u+Du*lu*.2-uvv+F*(1-u);
+        V2[i]=v+Dv*lv*.2+uvv-(F+K)*v;
+      }
+    }
+    [U,U2]=[U2,U];[V,V2]=[V2,V];
+  }
+  const img=ctx.createImageData(W,H);
+  function draw(){
+    const d=img.data;
+    for(let i=0;i<N;i++){
+      const on=V[i]>.24,j=i*4;
+      d[j]=on?17:244;d[j+1]=on?17:243;d[j+2]=on?17:239;d[j+3]=255;
+    }
+    ctx.putImageData(img,0,0);
+  }
+  for(let i=0;i<2600;i++)step();
+  draw();
+  if(matchMedia('(prefers-reduced-motion:reduce)').matches)return;
+  let visible=true;
+  new IntersectionObserver(e=>visible=e[0].isIntersecting).observe(cv);
+  cv.parentElement.addEventListener('pointermove',e=>{
+    const r=cv.getBoundingClientRect();
+    seed(((e.clientX-r.left)/r.width*W)|0,((e.clientY-r.top)/r.height*H)|0,2);
+  });
+  (function loop(){
+    if(visible){for(let i=0;i<6;i++)step();draw();}
+    requestAnimationFrame(loop);
+  })();
+})();
+
+/* reveal */
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.05});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
