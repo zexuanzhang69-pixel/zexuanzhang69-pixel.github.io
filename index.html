@@ -167,6 +167,28 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 @media(max-width:900px){.fun{grid-template-columns:1fr}.fun-card{min-height:250px}}
 @media(prefers-reduced-motion:reduce){.route-line,.eq i,.steps i{animation:none}.eq i{transform:scaleY(.6)}.steps i{opacity:.6}}
 
+/* coursework: flip cards */
+.courses{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.course{perspective:1100px;height:290px;outline:none;cursor:default}
+.flip{position:relative;width:100%;height:100%;transform-style:preserve-3d;transition:transform .7s cubic-bezier(.4,.2,.2,1)}
+.face{position:absolute;inset:0;padding:20px 22px 22px;display:flex;flex-direction:column;backface-visibility:hidden;-webkit-backface-visibility:hidden;border:1px solid var(--ink)}
+.front{background:var(--bg)}
+.back{background:var(--tint,#e6e3da);color:var(--ink);transform:rotateY(180deg);justify-content:flex-start;gap:18px}
+.course:nth-child(1) .back{--tint:#cde3d2}.course:nth-child(2) .back{--tint:#f4e3a1}.course:nth-child(3) .back{--tint:#c9dcf2}.course:nth-child(4) .back{--tint:#f4cfc7}.course:nth-child(5) .back{--tint:#d9d0f0}.course:nth-child(6) .back{--tint:#c3e8e0}.course:nth-child(7) .back{--tint:#f6d5b0}.course:nth-child(8) .back{--tint:#e0eab0}.course:nth-child(9) .back{--tint:#efc9dd}
+.c-top{display:flex;justify-content:space-between;opacity:.65}
+.front h3{font-family:var(--serif);font-weight:400;font-size:clamp(26px,2.6vw,32px);line-height:1.08;margin:auto 0 16px}
+.c-kw{display:flex;flex-wrap:wrap;gap:6px}
+.c-kw span{border:1px solid var(--ink);border-radius:99px;padding:1px 10px;font-size:12px}
+.back p{font-size:14.5px;line-height:1.6}
+.front.long h3,.long .front h3{font-size:clamp(20px,2vw,24px)}
+.c-top span:last-child{text-align:right}
+@media(hover:hover){.course:hover .flip{transform:rotateY(180deg)}}
+.course:focus-visible .flip,.course.flipped .flip{transform:rotateY(180deg)}
+.course:focus-visible{outline:2px solid var(--ink);outline-offset:4px}
+@media(max-width:900px){.courses{gap:10px}.course{height:230px}.face{padding:14px}.front h3{font-size:22px}}
+@media(max-width:640px){.courses{gap:6px}.course{height:182px;perspective:700px}.face{padding:9px}.c-top{font-size:9px;letter-spacing:.06em}.front h3{font-size:15px;line-height:1.1;margin:auto 0 8px}.long .front h3{font-size:12px;line-height:1.12}.c-kw{flex-direction:column;flex-wrap:nowrap;gap:1px}.c-kw span{border:0;border-radius:0;padding:0 0 0 8px;font-size:9.5px;line-height:1.25;opacity:.8;position:relative}.c-kw span::before{content:"";position:absolute;left:0;top:.5em;width:3px;height:3px;background:currentColor;border-radius:50%}.back{gap:8px}.back p{font-size:10.5px;line-height:1.45}}
+@media(prefers-reduced-motion:reduce){.flip{transition:none}}
+
 @media(max-width:900px){
   .hero .wrap{grid-template-columns:1fr;gap:40px;min-height:0}
   .pattern{justify-self:start;max-width:100%;aspect-ratio:1/1}
@@ -252,9 +274,137 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
   </div>
 </section>
 
+<section class="s rv" id="coursework">
+  <div class="wrap">
+    <div class="label caps">03 / Coursework</div>
+    <div>
+      <h2>What I study.</h2>
+      <div class="courses">
+        <article class="course" tabindex="0" aria-label="Environmental Aspects of the Built Environment: hover, focus or tap to read the description">
+          <div class="flip">
+            <div class="face front">
+              <div class="c-top caps"><span>01</span><span>KTH</span></div>
+              <h3>Environmental Aspects of the Built Environment</h3>
+              <div class="c-kw"><span>Built environment</span><span>Environmental impact</span><span>Buildings</span></div>
+            </div>
+            <div class="face back">
+              <div class="c-top caps"><span>01</span><span>AG2806 · HT25</span></div>
+              <p>How buildings affect health, environment and resources, and how to assess and reduce those impacts.</p>
+            </div>
+          </div>
+        </article>
+        <article class="course" tabindex="0" aria-label="City Networks in Regional Contexts: hover, focus or tap to read the description">
+          <div class="flip">
+            <div class="face front">
+              <div class="c-top caps"><span>02</span><span>KTH</span></div>
+              <h3>City Networks in Regional Contexts</h3>
+              <div class="c-kw"><span>Polycentric regions</span><span>Territorial cohesion</span><span>City networks</span></div>
+            </div>
+            <div class="face back">
+              <div class="c-top caps"><span>02</span><span>AG2116 · HT25</span></div>
+              <p>Cities and city networks as drivers of regional development, competitiveness and territorial cohesion.</p>
+            </div>
+          </div>
+        </article>
+        <article class="course" tabindex="0" aria-label="Applied Urban and Regional Analysis: hover, focus or tap to read the description">
+          <div class="flip">
+            <div class="face front">
+              <div class="c-top caps"><span>03</span><span>KTH</span></div>
+              <h3>Applied Urban and Regional Analysis</h3>
+              <div class="c-kw"><span>GIS</span><span>Spatial analysis</span><span>Statistics</span></div>
+            </div>
+            <div class="face back">
+              <div class="c-top caps"><span>03</span><span>AG2130 · VT26</span></div>
+              <p>Applying GIS and statistical tools to practical planning problems, then presenting and critiquing the results.</p>
+            </div>
+          </div>
+        </article>
+        <article class="course" tabindex="0" aria-label="Transport and Sustainable Development: hover, focus or tap to read the description">
+          <div class="flip">
+            <div class="face front">
+              <div class="c-top caps"><span>04</span><span>KTH</span></div>
+              <h3>Transport and Sustainable Development</h3>
+              <div class="c-kw"><span>Sustainable transport</span><span>Scenarios</span><span>Backcasting</span></div>
+            </div>
+            <div class="face back">
+              <div class="c-top caps"><span>04</span><span>AH2303 / AG2804 · VT26</span></div>
+              <p>Visions, scenarios and backcasting for sustainable transport, and how mobility links to urban development.</p>
+            </div>
+          </div>
+        </article>
+        <article class="course long" tabindex="0" aria-label="Theory of Science and Research Methodology for Planning and Design: hover, focus or tap to read the description">
+          <div class="flip">
+            <div class="face front">
+              <div class="c-top caps"><span>05</span><span>KTH</span></div>
+              <h3>Theory of Science and Research Methodology for Planning and Design</h3>
+              <div class="c-kw"><span>Research methods</span><span>Research design</span><span>Scientific writing</span></div>
+            </div>
+            <div class="face back">
+              <div class="c-top caps"><span>05</span><span>AG2126 · VT26</span></div>
+              <p>Theories and methods of planning research: forming questions, choosing methods, presenting results.</p>
+            </div>
+          </div>
+        </article>
+        <article class="course" tabindex="0" aria-label="Landscape Urbanism: hover, focus or tap to read the description">
+          <div class="flip">
+            <div class="face front">
+              <div class="c-top caps"><span>06</span><span>KU Leuven</span></div>
+              <h3>Landscape Urbanism</h3>
+              <div class="c-kw"><span>Landscape ecology</span><span>Urban metabolism</span><span>More-than-human</span></div>
+            </div>
+            <div class="face back">
+              <div class="c-top caps"><span>06</span><span>H03N1A · 2026–27</span></div>
+              <p>How landscape thinking has shaped the planning and design of cities and regions since the twentieth century.</p>
+            </div>
+          </div>
+        </article>
+        <article class="course" tabindex="0" aria-label="Inclusive Design: hover, focus or tap to read the description">
+          <div class="flip">
+            <div class="face front">
+              <div class="c-top caps"><span>07</span><span>KU Leuven</span></div>
+              <h3>Inclusive Design</h3>
+              <div class="c-kw"><span>Human diversity</span><span>Accessibility</span><span>User experts</span></div>
+            </div>
+            <div class="face back">
+              <div class="c-top caps"><span>07</span><span>H03U1A · 2026–27</span></div>
+              <p>A design approach that welcomes human diversity, applied by analysing and redesigning an existing building.</p>
+            </div>
+          </div>
+        </article>
+        <article class="course" tabindex="0" aria-label="Project Development and Management: hover, focus or tap to read the description">
+          <div class="flip">
+            <div class="face front">
+              <div class="c-top caps"><span>08</span><span>KU Leuven</span></div>
+              <h3>Project Development and Management</h3>
+              <div class="c-kw"><span>Complex projects</span><span>Stakeholders</span><span>Feasibility</span></div>
+            </div>
+            <div class="face back">
+              <div class="c-top caps"><span>08</span><span>H02O3A · 2026–27</span></div>
+              <p>How to develop and manage complex urban projects, involve public and private actors, and test feasibility.</p>
+            </div>
+          </div>
+        </article>
+        <article class="course" tabindex="0" aria-label="Fire Protection and Building Safety: hover, focus or tap to read the description">
+          <div class="flip">
+            <div class="face front">
+              <div class="c-top caps"><span>09</span><span>KU Leuven</span></div>
+              <h3>Fire Protection and Building Safety</h3>
+              <div class="c-kw"><span>Fire safety</span><span>Prevention</span><span>Building safety</span></div>
+            </div>
+            <div class="face back">
+              <div class="c-top caps"><span>09</span><span>H9X43A · 2026–27</span></div>
+              <p>Recognising fire hazards in buildings, and knowing how to prevent them and where to find solutions.</p>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="s rv" id="work">
   <div class="wrap">
-    <div class="label caps">03 / Selected work</div>
+    <div class="label caps">04 / Selected work</div>
     <div>
       <h2>Projects &amp; research.</h2>
       <div class="proj">
@@ -310,7 +460,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 
 <section class="s rv" id="experience">
   <div class="wrap">
-    <div class="label caps">04 / Experience</div>
+    <div class="label caps">05 / Experience</div>
     <div>
       <h2>Work &amp; more.</h2>
 
@@ -332,6 +482,8 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
         <div class="item"><div class="caps mute">2026</div><div><h3>Buddy, International Reception Team <span>· KTH Royal Institute of Technology</span></h3></div></div>
         <div class="item"><div class="caps mute">2026</div><div><h3>Participant <span>· <a class="xl" href="https://www.plantbasedcampus.org/" target="_blank" rel="noopener noreferrer">Plant-Based Campus ↗</a></span></h3></div></div>
         <div class="item"><div class="caps mute">2020 – 2021</div><div><h3>Director of the Publicity Department <span>· <a class="xl" href="https://club.xjtlu.edu.cn/en/club/56" target="_blank" rel="noopener noreferrer">XJTLU Tea Art Association ↗</a></span></h3></div></div>
+        <div class="item"><div class="caps mute">2020</div><div><h3>Outstanding Buddy <span>· XJTLU Buddy Programme</span></h3></div></div>
+        <div class="item"><div class="caps mute">2017</div><div><h3>Visiting Student <span>· Ivy League Summer Study Tour Programme</span></h3></div></div>
       </div>
 
       <div class="sub-h caps">Certifications</div>
@@ -344,7 +496,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 
 <section class="s rv" id="skills">
   <div class="wrap">
-    <div class="label caps">05 / Skills</div>
+    <div class="label caps">06 / Skills</div>
     <div>
       <h2>Toolbox.</h2>
       <div class="skills">
@@ -358,7 +510,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 
 <section class="s rv" id="interests">
   <div class="wrap">
-    <div class="label caps">06 / Interests</div>
+    <div class="label caps">07 / Interests</div>
     <div>
       <h2>Off the clock.</h2>
       <div class="fun">
@@ -373,7 +525,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 
 <section class="s rv" id="contact">
   <div class="wrap">
-    <div class="label caps">07 / Contact</div>
+    <div class="label caps">08 / Contact</div>
     <div>
       <h2>Say hello.</h2>
       <a class="mail" href="mailto:zexuan.zhang@outlook.com">zexuan.zhang@outlook.com</a>
@@ -445,6 +597,12 @@ document.documentElement.classList.add('js');
     requestAnimationFrame(loop);
   })();
 })();
+
+
+/* flip cards: tap to flip on touch devices */
+if(matchMedia('(hover:none)').matches){
+  document.querySelectorAll('.course').forEach(c=>c.addEventListener('click',()=>c.classList.toggle('flipped')));
+}
 
 /* reveal */
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.05});
